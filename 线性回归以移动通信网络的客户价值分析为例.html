@@ -513,14 +513,14 @@ AIC认为“真模型”不可能是线性的。AIC这个性质称为损失有�
 <span id="cb25-3"><a href="线性回归以移动通信网络的客户价值分析为例.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cv.outlas) <span class="do">##cross-validation curve</span></span></code></pre></div>
 <p><img src="01-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="线性回归以移动通信网络的客户价值分析为例.html#cb26-1" aria-hidden="true" tabindex="-1"></a>(bestlam<span class="ot">&lt;-</span>cv.outlas<span class="sc">$</span>lambda.min)</span></code></pre></div>
-<pre><code>## [1] 0.0008496792</code></pre>
+<pre><code>## [1] 0.0004862177</code></pre>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="线性回归以移动通信网络的客户价值分析为例.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(cv.outlas,<span class="at">type=</span><span class="st">&#39;coefficients&#39;</span>,<span class="at">s=</span>bestlam)</span></code></pre></div>
 <pre><code>## 4 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
 ##                       s1
-## (Intercept) -0.482249241
-## X1           0.233588923
-## X2           0.087192489
-## X3          -0.004899916</code></pre>
+## (Intercept) -0.484951321
+## X1           0.234435944
+## X2           0.088173782
+## X3          -0.006143331</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="线性回归以移动通信网络的客户价值分析为例.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cv.outlas<span class="sc">$</span>glmnet.fit,<span class="at">xvar=</span><span class="st">&quot;lambda&quot;</span>) <span class="co">#coefficient plot</span></span></code></pre></div>
 <p><img src="01-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="线性回归以移动通信网络的客户价值分析为例.html#cb31-1" aria-hidden="true" tabindex="-1"></a>fit.lasso <span class="ot">&lt;-</span> <span class="fu">glmnet</span>(<span class="fu">cbind</span>(X1,X2,X3),Y,<span class="at">alpha=</span><span class="dv">1</span>,<span class="at">lambda =</span> bestlam)</span></code></pre></div>
