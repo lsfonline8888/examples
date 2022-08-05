@@ -1,7 +1,7 @@
 --- 
 title: "R语言学习案例"
 author: "TJUFE, Sifan Liu"
-date: "2022-08-05"
+date: "2022-08-06"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
